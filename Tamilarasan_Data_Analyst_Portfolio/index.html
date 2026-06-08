@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamilarasan P | Data Analyst</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Poppins, Arial, sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#07111f;
+      color:white;
+    }
+
+    section{
+      min-height:100vh;
+      padding:90px 10%;
+    }
+
+    /* NAVIGATION */
+    .nav-toggle{
+      position:fixed;
+      top:25px;
+      right:25px;
+      width:55px;
+      height:55px;
+      background:#0d8cff;
+      border-radius:50%;
+      color:white;
+      font-size:28px;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+      cursor:pointer;
+    }
+
+    .navmenu{
+      position:fixed;
+      left:15px;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:1500;
+    }
+
+    .navmenu ul{
+      list-style:none;
+    }
+
+    .navmenu li{
+      margin:14px 0;
+    }
+
+    .navmenu a{
+      width:190px;
+      padding:15px 22px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      background:#e9e9e9;
+      color:#3d4652;
+      text-decoration:none;
+      border-radius:50px;
+      font-size:18px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .navmenu a:hover,
+    .navmenu a.active{
+      background:#0d8cff;
+      color:white;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      padding:80px 80px 80px 260px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      background:
+      linear-gradient(
+        rgba(0, 10, 25, .55),
+        rgba(0, 10, 25, .65)
+      ),
+      url("images/hero-bg.png");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .hero-content{
+      max-width:1100px;
+      position:relative;
+      z-index:5;
+    }
+
+    .hero-content h4{
+      font-size:30px;
+      font-weight:400;
+      color:#e6eefc;
+      margin-bottom:10px;
+    }
+
+    .hero-name{
+      font-size:82px;
+      line-height:1.05;
+      color:#ffffff;
+      font-weight:900;
+      letter-spacing:2px;
+      margin-bottom:10px;
+      white-space:nowrap;
+    }
+
+    .hero-content h2{
+      font-size:55px;
+      color:#008cff;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:22px;
+      line-height:1.7;
+      color:#f0f6ff;
+      max-width:700px;
+    }
+
+    .hero-buttons{
+      margin-top:30px;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .hero-buttons a{
+      color:white;
+      text-decoration:none;
+      border:1px solid #00aaff;
+      padding:14px 28px;
+      border-radius:10px;
+      font-weight:700;
+      background:rgba(0, 140, 255, .15);
+      transition:.3s;
+    }
+
+    .hero-buttons a:hover{
+      background:#008cff;
+      transform:translateY(-4px);
+    }
+
+    .tool-box{
+      margin-top:40px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      padding:22px;
+      max-width:650px;
+      border:1px solid rgba(0,170,255,.5);
+      border-radius:18px;
+      background:rgba(0, 20, 45, .7);
+      backdrop-filter:blur(10px);
+    }
+
+    .tool{
+      min-width:105px;
+      text-align:center;
+      color:white;
+    }
+
+    .tool i{
+      display:block;
+      color:#00c8ff;
+      font-size:34px;
+      margin-bottom:8px;
+    }
+
+    /* COMMON */
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      color:#00c8ff;
+    }
+
+    .section-title p{
+      margin-top:10px;
+      color:#b7c7d9;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:20px;
+      padding:30px;
+      backdrop-filter:blur(12px);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#00c8ff;
+    }
+
+    .card h3{
+      color:#00c8ff;
+      margin-bottom:15px;
+    }
+
+    .card p,
+    .card li{
+      color:#d6e6ff;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    .card ul{
+      margin-left:20px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#0d8cff;
+      color:white;
+      padding:7px 13px;
+      border-radius:20px;
+      margin:10px 5px 0 0;
+      font-size:14px;
+    }
+
+    .about-text{
+      max-width:900px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.9;
+      text-align:justify;
+    }
+
+    /* CERTIFICATES */
+    #certificates{
+      padding-left:260px;
+      padding-right:70px;
+    }
+
+    .certificate-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:28px;
+      max-width:1300px;
+      margin:0 auto;
+    }
+
+    .certificate-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:18px;
+      overflow:hidden;
+      cursor:pointer;
+      transition:.3s;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .certificate-card:hover{
+      transform:translateY(-8px);
+      border-color:#00c8ff;
+      box-shadow:0 0 25px rgba(0,200,255,.25);
+    }
+
+    .certificate-card img{
+      width:100%;
+      height:230px;
+      object-fit:contain;
+      background:#ffffff;
+      display:block;
+      padding:8px;
+    }
+
+    .certificate-card h3{
+      color:#00c8ff;
+      padding:18px 18px 6px;
+      font-size:20px;
+    }
+
+    .certificate-card p{
+      color:#d6e6ff;
+      padding:0 18px 20px;
+      font-size:16px;
+      line-height:1.5;
+    }
+
+    .certificate-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.92);
+      z-index:9999;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+    }
+
+    .certificate-modal.active{
+      display:flex;
+    }
+
+    .certificate-modal img{
+      max-width:92vw;
+      max-height:88vh;
+      object-fit:contain;
+      background:white;
+      border-radius:10px;
+      box-shadow:0 0 35px rgba(0,200,255,.35);
+    }
+
+    .close-btn{
+      position:absolute;
+      top:20px;
+      right:35px;
+      color:white;
+      font-size:48px;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .contact-box{
+      max-width:700px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .contact-box a{
+      color:#00c8ff;
+      text-decoration:none;
+    }
+
+    footer{
+      background:#050b14;
+      text-align:center;
+      padding:30px;
+      color:#b7c7d9;
+    }
+
+    /* TABLET */
+    @media(max-width:1200px){
+      .hero-name{
+        font-size:64px;
+      }
+
+      .certificate-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    /* MOBILE */
+    @media(max-width:900px){
+      section{
+        padding:90px 25px;
+      }
+
+      .nav-toggle{
+        display:flex;
+      }
+
+      .navmenu{
+        left:-270px;
+        top:0;
+        transform:none;
+        width:260px;
+        height:100vh;
+        background:white;
+        padding-top:95px;
+        transition:.4s;
+      }
+
+      .navmenu.active{
+        left:0;
+      }
+
+      .navmenu a{
+        margin-left:20px;
+      }
+
+      .hero{
+        padding:120px 25px 80px 25px;
+        background-position:center;
+      }
+
+      .hero-name{
+        font-size:42px;
+        white-space:normal;
+      }
+
+      .hero-content h2{
+        font-size:34px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .tool-box{
+        max-width:100%;
+      }
+
+      #certificates{
+        padding-left:25px;
+        padding-right:25px;
+      }
+
+      .certificate-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MOBILE MENU BUTTON -->
+  <div class="nav-toggle" onclick="toggleMenu()">
+    <i class="bi bi-list" id="menuIcon"></i>
+  </div>
+
+  <!-- LEFT NAVIGATION -->
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="#hero" class="active"><i class="bi bi-house-fill"></i> Home</a></li>
+      <li><a href="#about"><i class="bi bi-person-circle"></i> About</a></li>
+      <li><a href="#skills"><i class="bi bi-bar-chart-fill"></i> Skills</a></li>
+      <li><a href="#projects"><i class="bi bi-kanban-fill"></i> Projects</a></li>
+      <li><a href="#education"><i class="bi bi-mortarboard-fill"></i> Education</a></li>
+      <li><a href="#certificates"><i class="bi bi-award-fill"></i> Certificates</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope-fill"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h4>Hello, I'm</h4>
+      <h1 class="hero-name">TAMILARASAN&nbsp;P</h1>
+      <h2>DATA ANALYST</h2>
+
+      <p>
+        Transforming raw data into meaningful insights using Excel,
+        MySQL, Power BI, Python, and AI-driven analytics.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects"><i class="bi bi-graph-up-arrow"></i> View Projects</a>
+        <a href="#about"><i class="bi bi-person"></i> About Me</a>
+        <a href="#contact"><i class="bi bi-envelope"></i> Contact Me</a>
+      </div>
+
+      <div class="tool-box">
+        <div class="tool"><i class="bi bi-file-earmark-spreadsheet-fill"></i>Excel</div>
+        <div class="tool"><i class="bi bi-bar-chart-line-fill"></i>Power BI</div>
+        <div class="tool"><i class="bi bi-database-fill"></i>MySQL</div>
+        <div class="tool"><i class="bi bi-code-slash"></i>Python</div>
+        <div class="tool"><i class="bi bi-filetype-html"></i>HTML</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Data Analyst Portfolio</p>
+    </div>
+
+    <div class="card about-text">
+      I am an enthusiastic and detail-oriented B.Tech Information Technology student
+      with a strong interest in Data Analytics. I am skilled in Python, MySQL,
+      Excel, Power BI, and HTML. I enjoy turning raw data into meaningful insights
+      that support decision-making. I am seeking an opportunity to apply my
+      analytical skills in a professional environment while contributing to
+      organizational growth.
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title">
+      <h2>Technical Skills</h2>
+      <p>Tools and technologies I use</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3><i class="bi bi-code-slash"></i> Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>HTML</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="bi bi-database-fill"></i> Database</h3>
+        <ul>
+          <li>MySQL</li>
+          <li>SQL Queries</li>
+          <li>Data Handling</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="bi bi-graph-up-arrow"></i> Analytics</h3>
+        <ul>
+          <li>MS Excel</li>
+          <li>Power BI</li>
+          <li>Data Visualization</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="bi bi-lightbulb-fill"></i> Core Concepts</h3>
+        <ul>
+          <li>Data Cleaning</li>
+          <li>Exploratory Data Analysis</li>
+          <li>Dashboarding</li>
+          <li>Business Insights</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Featured Data Analyst projects</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AI Store Sales Forecasting & Demand Planning</h3>
+        <p>
+          Built an AI-driven store sales forecasting and demand planning system
+          using machine learning techniques to predict future sales and customer
+          demand. The project helps optimize inventory management and supports
+          data-driven retail decision-making.
+        </p>
+        <span class="tag">Python</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Excel</span>
+        <span class="tag">MySQL</span>
+      </div>
+
+      <div class="card">
+        <h3>AI-Powered Student Performance Analytics Platform</h3>
+        <p>
+          Built a Student Performance Analytics System using React, Django,
+          Python, Recharts, and Tailwind CSS. The system processes CSV data,
+          analyzes academic performance and attendance, identifies at-risk
+          students, and provides improvement insights through dashboards.
+        </p>
+        <span class="tag">React</span>
+        <span class="tag">Django</span>
+        <span class="tag">Python</span>
+        <span class="tag">Recharts</span>
+      </div>
+
+      <div class="card">
+        <h3>AI Data Analytics Platform</h3>
+        <p>
+          Built a full-stack AI-powered data analytics platform using Django REST
+          Framework and React. Users can upload CSV/Excel datasets, generate
+          automated analysis, view AI insights, interact with an AI chatbot, and
+          visualize business data through charts.
+        </p>
+        <span class="tag">Django REST</span>
+        <span class="tag">React</span>
+        <span class="tag">Python</span>
+        <span class="tag">Charts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>Academic background</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>B.Tech - Information Technology</h3>
+        <p>Sri Krishna Engineering College, Chennai</p>
+        <p>Anna University</p>
+        <p>2022 - 2026</p>
+        <p><strong>CGPA:</strong> 7.7</p>
+      </div>
+
+      <div class="card">
+        <h3>Higher Secondary Education</h3>
+        <p>SRV Excel Matric Higher Secondary School, Rasipuram</p>
+        <p><strong>HSC:</strong> 73.5%</p>
+      </div>
+
+      <div class="card">
+        <h3>Secondary School Education</h3>
+        <p>SRV Excel Matric Higher Secondary School, Rasipuram</p>
+        <p><strong>SSLC:</strong> 76%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="section-title">
+      <h2>Certifications</h2>
+      <p>Click any certificate to view full size</p>
+    </div>
+
+    <div class="certificate-grid">
+      <div class="certificate-card" onclick="openCertificate('images/powerbi.jpg')">
+        <img src="images/powerbi.jpg" alt="Power BI Certificate">
+        <h3>Office Master</h3>
+        <p>Power BI Workshop</p>
+      </div>
+
+      <div class="certificate-card" onclick="openCertificate('images/crud.jpg')">
+        <img src="images/crud.jpg" alt="CRUD Certificate">
+        <h3>CRUD Operations</h3>
+        <p>Data Analytics Orientation Program</p>
+      </div>
+
+      <div class="certificate-card" onclick="openCertificate('images/internship.jpg')">
+        <img src="images/internship.jpg" alt="Internship Certificate">
+        <h3>Spiro Prime Tech Services</h3>
+        <p>Internship Completion</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL CERTIFICATE VIEW -->
+  <div id="certificateModal" class="certificate-modal" onclick="closeCertificate(event)">
+    <span class="close-btn" onclick="closeCertificate(event)">&times;</span>
+    <img id="modalImage" src="" alt="Certificate Full View">
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+      <p>Available for Data Analyst internships and entry-level roles</p>
+    </div>
+
+    <div class="card contact-box">
+      <p><i class="bi bi-envelope-fill"></i>
+        Email:
+        <a href="mailto:ta9842655155@gmail.com">ta9842655155@gmail.com</a>
+      </p>
+
+      <p><i class="bi bi-telephone-fill"></i>
+        Phone:
+        <a href="tel:+919345792029">+91 9345792029</a>
+      </p>
+
+      <p><i class="bi bi-linkedin"></i> LinkedIn: Tamil Arasan</p>
+      <p><i class="bi bi-github"></i> GitHub: Tamilarasa</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Tamilarasan P | Data Analyst Portfolio</p>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const nav = document.getElementById("navmenu");
+      const icon = document.getElementById("menuIcon");
+
+      nav.classList.toggle("active");
+
+      if(nav.classList.contains("active")){
+        icon.classList.remove("bi-list");
+        icon.classList.add("bi-x");
+      }else{
+        icon.classList.remove("bi-x");
+        icon.classList.add("bi-list");
+      }
+    }
+
+    const links = document.querySelectorAll(".navmenu a");
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        links.forEach(item => item.classList.remove("active"));
+        link.classList.add("active");
+
+        if(window.innerWidth <= 900){
+          document.getElementById("navmenu").classList.remove("active");
+          document.getElementById("menuIcon").classList.remove("bi-x");
+          document.getElementById("menuIcon").classList.add("bi-list");
+        }
+      });
+    });
+
+    function openCertificate(src){
+      const modal = document.getElementById("certificateModal");
+      const modalImage = document.getElementById("modalImage");
+      modalImage.src = src;
+      modal.classList.add("active");
+    }
+
+    function closeCertificate(event){
+      if(event.target.id === "certificateModal" || event.target.classList.contains("close-btn")){
+        document.getElementById("certificateModal").classList.remove("active");
+        document.getElementById("modalImage").src = "";
+      }
+    }
+
+    document.addEventListener("keydown", function(event){
+      if(event.key === "Escape"){
+        document.getElementById("certificateModal").classList.remove("active");
+        document.getElementById("modalImage").src = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
