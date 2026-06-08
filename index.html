@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tamilarasan P | Data Analyst</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
     *{
@@ -15,66 +15,73 @@
       font-family:Poppins, Arial, sans-serif;
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth;}
 
     body{
       background:#07111f;
       color:white;
+      overflow-x:hidden;
     }
 
     section{
       min-height:100vh;
-      padding:90px 10%;
+      padding:90px 9%;
+    }
+
+    /* THREE LINE MENU BUTTON */
+    .menu-btn{
+      position:fixed;
+      top:25px;
+      left:25px;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      background:#0d8cff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:3000;
+      box-shadow:0 0 20px rgba(0,140,255,.45);
+    }
+
+    .menu-btn i{
+      color:white;
+      font-size:32px;
     }
 
     /* NAVIGATION */
-    .nav-toggle{
-      position:fixed;
-      top:25px;
-      right:25px;
-      width:55px;
-      height:55px;
-      background:#0d8cff;
-      border-radius:50%;
-      color:white;
-      font-size:28px;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:2000;
-      cursor:pointer;
-    }
-
     .navmenu{
       position:fixed;
-      left:15px;
-      top:50%;
-      transform:translateY(-50%);
-      z-index:1500;
+      left:-270px;
+      top:0;
+      width:260px;
+      height:100vh;
+      background:rgba(5,12,24,.97);
+      backdrop-filter:blur(14px);
+      border-right:1px solid rgba(0,200,255,.35);
+      padding-top:105px;
+      transition:.35s ease;
+      z-index:2500;
     }
 
-    .navmenu ul{
-      list-style:none;
-    }
+    .navmenu.active{left:0;}
 
-    .navmenu li{
-      margin:14px 0;
-    }
+    .navmenu ul{list-style:none; padding:0 20px;}
+
+    .navmenu li{margin:16px 0;}
 
     .navmenu a{
-      width:190px;
-      padding:15px 22px;
       display:flex;
       align-items:center;
       gap:14px;
+      padding:15px 20px;
+      border-radius:50px;
       background:#e9e9e9;
       color:#3d4652;
-      text-decoration:none;
-      border-radius:50px;
       font-size:18px;
-      font-weight:600;
+      font-weight:700;
+      text-decoration:none;
       transition:.3s;
     }
 
@@ -82,65 +89,59 @@
     .navmenu a.active{
       background:#0d8cff;
       color:white;
+      transform:translateX(5px);
     }
 
     /* HERO */
     .hero{
       min-height:100vh;
-      padding:80px 80px 80px 260px;
       display:flex;
       align-items:center;
       justify-content:flex-start;
+      padding:90px 8% 80px 14%;
       background:
-      linear-gradient(
-        rgba(0, 10, 25, .55),
-        rgba(0, 10, 25, .65)
-      ),
+      linear-gradient(rgba(0,10,25,.42), rgba(0,10,25,.55)),
       url("images/hero-bg.png");
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
     }
 
-    .hero-content{
-      max-width:1100px;
-      position:relative;
-      z-index:5;
-    }
+    .hero-content{max-width:1000px; position:relative; z-index:5;}
 
     .hero-content h4{
       font-size:30px;
       font-weight:400;
       color:#e6eefc;
-      margin-bottom:10px;
+      margin-bottom:12px;
     }
 
     .hero-name{
-      font-size:82px;
+      font-size:78px;
       line-height:1.05;
-      color:#ffffff;
+      color:#fff;
       font-weight:900;
       letter-spacing:2px;
-      margin-bottom:10px;
+      margin-bottom:15px;
       white-space:nowrap;
     }
 
     .hero-content h2{
-      font-size:55px;
+      font-size:52px;
       color:#008cff;
       font-weight:900;
-      margin-bottom:20px;
+      margin-bottom:24px;
     }
 
     .hero-content p{
       font-size:22px;
       line-height:1.7;
       color:#f0f6ff;
-      max-width:700px;
+      max-width:780px;
     }
 
     .hero-buttons{
-      margin-top:30px;
+      margin-top:32px;
       display:flex;
       gap:18px;
       flex-wrap:wrap;
@@ -153,32 +154,34 @@
       padding:14px 28px;
       border-radius:10px;
       font-weight:700;
-      background:rgba(0, 140, 255, .15);
+      background:rgba(0,140,255,.15);
       transition:.3s;
     }
 
     .hero-buttons a:hover{
       background:#008cff;
       transform:translateY(-4px);
+      box-shadow:0 0 20px rgba(0,140,255,.45);
     }
 
     .tool-box{
       margin-top:40px;
       display:flex;
       flex-wrap:wrap;
-      gap:15px;
+      gap:18px;
       padding:22px;
-      max-width:650px;
+      max-width:720px;
       border:1px solid rgba(0,170,255,.5);
       border-radius:18px;
-      background:rgba(0, 20, 45, .7);
+      background:rgba(0,20,45,.72);
       backdrop-filter:blur(10px);
     }
 
     .tool{
-      min-width:105px;
+      min-width:115px;
       text-align:center;
       color:white;
+      font-weight:600;
     }
 
     .tool i{
@@ -186,6 +189,64 @@
       color:#00c8ff;
       font-size:34px;
       margin-bottom:8px;
+    }
+
+
+
+    .hero-social{
+      margin-top:26px;
+      display:flex;
+      gap:18px;
+    }
+
+    .hero-social a{
+      width:55px;
+      height:55px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:2px solid #00c8ff;
+      color:#00c8ff;
+      font-size:28px;
+      text-decoration:none;
+      background:rgba(0,20,45,.55);
+      transition:.3s;
+    }
+
+    .hero-social a:hover{
+      background:#00c8ff;
+      color:#07111f;
+      transform:translateY(-5px);
+      box-shadow:0 0 20px rgba(0,200,255,.45);
+    }
+
+    .contact-social{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .contact-social a{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:white;
+      background:rgba(0,140,255,.15);
+      border:1px solid #00c8ff;
+      padding:13px 24px;
+      border-radius:12px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .contact-social a:hover{
+      background:#00c8ff;
+      color:#07111f;
+      transform:translateY(-4px);
     }
 
     /* COMMON */
@@ -236,9 +297,7 @@
       font-size:17px;
     }
 
-    .card ul{
-      margin-left:20px;
-    }
+    .card ul{margin-left:20px;}
 
     .tag{
       display:inline-block;
@@ -250,36 +309,76 @@
       font-size:14px;
     }
 
-    .about-text{
-      max-width:900px;
-      margin:auto;
-      font-size:18px;
+    /* ABOUT */
+    .about-container{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:30px;
+      align-items:stretch;
+    }
+
+    .about-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(0,200,255,.35);
+      border-radius:22px;
+      padding:35px;
+    }
+
+    .about-card h3{
+      color:#00c8ff;
+      margin-bottom:18px;
+      font-size:26px;
+    }
+
+    .about-card p{
+      color:#d6e6ff;
       line-height:1.9;
+      margin-bottom:18px;
+      font-size:17px;
       text-align:justify;
     }
 
-    /* CERTIFICATES */
-    #certificates{
-      padding-left:260px;
-      padding-right:70px;
+    .about-highlights{
+      display:grid;
+      gap:20px;
     }
 
+    .highlight-box{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:18px;
+      padding:24px;
+      transition:.3s;
+    }
+
+    .highlight-box:hover{
+      border-color:#00c8ff;
+      transform:translateY(-5px);
+    }
+
+    .highlight-box h3{
+      color:#00c8ff;
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .highlight-box p{color:#d6e6ff; line-height:1.7;}
+
+    /* CERTIFICATES */
     .certificate-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:28px;
-      max-width:1300px;
-      margin:0 auto;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      margin-top:35px;
     }
 
     .certificate-card{
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.15);
-      border-radius:18px;
+      border-radius:20px;
       overflow:hidden;
       cursor:pointer;
-      transition:.3s;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      transition:.35s;
     }
 
     .certificate-card:hover{
@@ -292,7 +391,7 @@
       width:100%;
       height:230px;
       object-fit:contain;
-      background:#ffffff;
+      background:#fff;
       display:block;
       padding:8px;
     }
@@ -300,14 +399,11 @@
     .certificate-card h3{
       color:#00c8ff;
       padding:18px 18px 6px;
-      font-size:20px;
     }
 
     .certificate-card p{
       color:#d6e6ff;
       padding:0 18px 20px;
-      font-size:16px;
-      line-height:1.5;
     }
 
     .certificate-modal{
@@ -315,35 +411,33 @@
       position:fixed;
       inset:0;
       background:rgba(0,0,0,.92);
-      z-index:9999;
+      z-index:5000;
       align-items:center;
       justify-content:center;
       padding:30px;
     }
 
-    .certificate-modal.active{
-      display:flex;
-    }
+    .certificate-modal.active{display:flex;}
 
     .certificate-modal img{
-      max-width:92vw;
-      max-height:88vh;
-      object-fit:contain;
-      background:white;
+      max-width:92%;
+      max-height:90%;
+      background:#fff;
       border-radius:10px;
       box-shadow:0 0 35px rgba(0,200,255,.35);
     }
 
     .close-btn{
       position:absolute;
-      top:20px;
-      right:35px;
+      top:25px;
+      right:40px;
       color:white;
-      font-size:48px;
+      font-size:46px;
       cursor:pointer;
-      line-height:1;
+      z-index:5100;
     }
 
+    /* CONTACT */
     .contact-box{
       max-width:700px;
       margin:auto;
@@ -362,88 +456,37 @@
       color:#b7c7d9;
     }
 
-    /* TABLET */
-    @media(max-width:1200px){
-      .hero-name{
-        font-size:64px;
-      }
-
-      .certificate-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
+    @media(max-width:1100px){
+      .hero-name{font-size:58px;}
+      .hero-content h2{font-size:42px;}
+      .about-container{grid-template-columns:1fr;}
     }
 
-    /* MOBILE */
-    @media(max-width:900px){
-      section{
-        padding:90px 25px;
-      }
-
-      .nav-toggle{
-        display:flex;
-      }
-
-      .navmenu{
-        left:-270px;
-        top:0;
-        transform:none;
-        width:260px;
-        height:100vh;
-        background:white;
-        padding-top:95px;
-        transition:.4s;
-      }
-
-      .navmenu.active{
-        left:0;
-      }
-
-      .navmenu a{
-        margin-left:20px;
-      }
-
+    @media(max-width:768px){
+      section{padding:80px 6%;}
       .hero{
-        padding:120px 25px 80px 25px;
+        padding:110px 25px 80px 25px;
         background-position:center;
       }
-
       .hero-name{
         font-size:42px;
         white-space:normal;
       }
-
-      .hero-content h2{
-        font-size:34px;
-      }
-
-      .hero-content p{
-        font-size:18px;
-      }
-
-      .tool-box{
-        max-width:100%;
-      }
-
-      #certificates{
-        padding-left:25px;
-        padding-right:25px;
-      }
-
-      .certificate-grid{
-        grid-template-columns:1fr;
-      }
+      .hero-content h2{font-size:32px;}
+      .hero-content h4{font-size:23px;}
+      .hero-content p{font-size:17px;}
+      .tool{min-width:85px;}
+      .certificate-card img{height:190px;}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- MOBILE MENU BUTTON -->
-  <div class="nav-toggle" onclick="toggleMenu()">
+  <div class="menu-btn" onclick="toggleMenu()">
     <i class="bi bi-list" id="menuIcon"></i>
   </div>
 
-  <!-- LEFT NAVIGATION -->
   <nav id="navmenu" class="navmenu">
     <ul>
       <li><a href="#hero" class="active"><i class="bi bi-house-fill"></i> Home</a></li>
@@ -456,13 +499,11 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <h4>Hello, I'm</h4>
       <h1 class="hero-name">TAMILARASAN&nbsp;P</h1>
       <h2>DATA ANALYST</h2>
-
       <p>
         Transforming raw data into meaningful insights using Excel,
         MySQL, Power BI, Python, and AI-driven analytics.
@@ -472,6 +513,11 @@
         <a href="#projects"><i class="bi bi-graph-up-arrow"></i> View Projects</a>
         <a href="#about"><i class="bi bi-person"></i> About Me</a>
         <a href="#contact"><i class="bi bi-envelope"></i> Contact Me</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://github.com/Tamilarasa" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/tamil-arasan-b05aba379" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
       </div>
 
       <div class="tool-box">
@@ -484,31 +530,47 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <div class="card about-text">
-  <p>
-    I am an enthusiastic and detail-oriented B.Tech Information Technology student
-    with a strong interest in Data Analytics. I am skilled in Python, MySQL,
-    Excel, Power BI, and HTML. I enjoy turning raw data into meaningful insights
-    that support decision-making.
-  </p>
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Get to know me better</p>
+    </div>
 
-  <p>
-    I am passionate about data cleaning, dashboard creation, business reporting,
-    and finding useful patterns from datasets. My goal is to become a professional
-    Data Analyst and help organizations make better decisions through clear,
-    accurate, and meaningful data insights.
-  </p>
+    <div class="about-container">
+      <div class="about-card">
+        <h3>Who Am I?</h3>
+        <p>
+          I am Tamilarasan P, a passionate Data Analyst and Information Technology student with a strong interest in transforming raw data into meaningful business insights.
+        </p>
+        <p>
+          I have experience working with Excel, MySQL, Power BI, Python, HTML, CSS, and JavaScript. I enjoy solving real-world problems through data analysis, visualization, and dashboard development.
+        </p>
+        <p>
+          My career goal is to become a professional Data Analyst and contribute to organizations by delivering data-driven solutions that improve decision-making and business growth.
+        </p>
+      </div>
 
-  <p>
-    I have hands-on project experience in student performance analytics, AI-powered
-    data analytics platforms, and sales forecasting. These projects helped me
-    improve my skills in data handling, visualization, problem-solving, and
-    analytical thinking.
-  </p>
-</div>
+      <div class="about-highlights">
+        <div class="highlight-box">
+          <h3>🎓 Education</h3>
+          <p>B.Tech Information Technology</p>
+        </div>
+        <div class="highlight-box">
+          <h3>📊 Projects</h3>
+          <p>3+ Major Analytics Projects</p>
+        </div>
+        <div class="highlight-box">
+          <h3>🏆 Certifications</h3>
+          <p>Power BI, Data Analytics & Internship</p>
+        </div>
+        <div class="highlight-box">
+          <h3>💼 Goal</h3>
+          <p>Data Analyst</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-title">
       <h2>Technical Skills</h2>
@@ -518,43 +580,23 @@
     <div class="grid">
       <div class="card">
         <h3><i class="bi bi-code-slash"></i> Programming</h3>
-        <ul>
-          <li>Python</li>
-          <li>HTML</li>
-        </ul>
+        <ul><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
       </div>
-
       <div class="card">
         <h3><i class="bi bi-database-fill"></i> Database</h3>
-        <ul>
-          <li>MySQL</li>
-          <li>SQL Queries</li>
-          <li>Data Handling</li>
-        </ul>
+        <ul><li>MySQL</li><li>SQL Queries</li><li>Data Handling</li></ul>
       </div>
-
       <div class="card">
         <h3><i class="bi bi-graph-up-arrow"></i> Analytics</h3>
-        <ul>
-          <li>MS Excel</li>
-          <li>Power BI</li>
-          <li>Data Visualization</li>
-        </ul>
+        <ul><li>MS Excel</li><li>Power BI</li><li>Data Visualization</li></ul>
       </div>
-
       <div class="card">
         <h3><i class="bi bi-lightbulb-fill"></i> Core Concepts</h3>
-        <ul>
-          <li>Data Cleaning</li>
-          <li>Exploratory Data Analysis</li>
-          <li>Dashboarding</li>
-          <li>Business Insights</li>
-        </ul>
+        <ul><li>Data Cleaning</li><li>Exploratory Data Analysis</li><li>Dashboarding</li><li>Business Insights</li></ul>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-title">
       <h2>Projects</h2>
@@ -564,49 +606,22 @@
     <div class="grid">
       <div class="card">
         <h3>AI Store Sales Forecasting & Demand Planning</h3>
-        <p>
-          Built an AI-driven store sales forecasting and demand planning system
-          using machine learning techniques to predict future sales and customer
-          demand. The project helps optimize inventory management and supports
-          data-driven retail decision-making.
-        </p>
-        <span class="tag">Python</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Excel</span>
-        <span class="tag">MySQL</span>
+        <p>Built an AI-driven store sales forecasting and demand planning system using machine learning techniques to predict future sales and customer demand.</p>
+        <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Excel</span><span class="tag">MySQL</span>
       </div>
-
       <div class="card">
         <h3>AI-Powered Student Performance Analytics Platform</h3>
-        <p>
-          Built a Student Performance Analytics System using React, Django,
-          Python, Recharts, and Tailwind CSS. The system processes CSV data,
-          analyzes academic performance and attendance, identifies at-risk
-          students, and provides improvement insights through dashboards.
-        </p>
-        <span class="tag">React</span>
-        <span class="tag">Django</span>
-        <span class="tag">Python</span>
-        <span class="tag">Recharts</span>
+        <p>Built a Student Performance Analytics System using React, Django, Python, Recharts, and Tailwind CSS to analyze academic performance and attendance.</p>
+        <span class="tag">React</span><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Recharts</span>
       </div>
-
       <div class="card">
         <h3>AI Data Analytics Platform</h3>
-        <p>
-          Built a full-stack AI-powered data analytics platform using Django REST
-          Framework and React. Users can upload CSV/Excel datasets, generate
-          automated analysis, view AI insights, interact with an AI chatbot, and
-          visualize business data through charts.
-        </p>
-        <span class="tag">Django REST</span>
-        <span class="tag">React</span>
-        <span class="tag">Python</span>
-        <span class="tag">Charts</span>
+        <p>Built a full-stack AI-powered analytics platform where users can upload CSV/Excel datasets, generate automated analysis, and visualize business data.</p>
+        <span class="tag">Django REST</span><span class="tag">React</span><span class="tag">Python</span><span class="tag">Charts</span>
       </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education">
     <div class="section-title">
       <h2>Education</h2>
@@ -621,13 +636,11 @@
         <p>2022 - 2026</p>
         <p><strong>CGPA:</strong> 7.7</p>
       </div>
-
       <div class="card">
         <h3>Higher Secondary Education</h3>
         <p>SRV Excel Matric Higher Secondary School, Rasipuram</p>
         <p><strong>HSC:</strong> 73.5%</p>
       </div>
-
       <div class="card">
         <h3>Secondary School Education</h3>
         <p>SRV Excel Matric Higher Secondary School, Rasipuram</p>
@@ -636,7 +649,6 @@
     </div>
   </section>
 
-  <!-- CERTIFICATES -->
   <section id="certificates">
     <div class="section-title">
       <h2>Certifications</h2>
@@ -645,32 +657,28 @@
 
     <div class="certificate-grid">
       <div class="certificate-card" onclick="openCertificate('images/powerbi.jpg')">
-        <img src="images/powerbi.jpg" alt="Power BI Certificate">
+        <img src="images/powerbi.jpg" alt="Power BI Certificate" />
         <h3>Office Master</h3>
         <p>Power BI Workshop</p>
       </div>
-
       <div class="certificate-card" onclick="openCertificate('images/crud.jpg')">
-        <img src="images/crud.jpg" alt="CRUD Certificate">
+        <img src="images/crud.jpg" alt="CRUD Certificate" />
         <h3>CRUD Operations</h3>
         <p>Data Analytics Orientation Program</p>
       </div>
-
       <div class="certificate-card" onclick="openCertificate('images/internship.jpg')">
-        <img src="images/internship.jpg" alt="Internship Certificate">
+        <img src="images/internship.jpg" alt="Internship Certificate" />
         <h3>Spiro Prime Tech Services</h3>
         <p>Internship Completion</p>
       </div>
     </div>
   </section>
 
-  <!-- FULL CERTIFICATE VIEW -->
   <div id="certificateModal" class="certificate-modal" onclick="closeCertificate(event)">
     <span class="close-btn" onclick="closeCertificate(event)">&times;</span>
-    <img id="modalImage" src="" alt="Certificate Full View">
+    <img id="modalImage" src="" alt="Certificate Full View" />
   </div>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-title">
       <h2>Contact Me</h2>
@@ -678,18 +686,12 @@
     </div>
 
     <div class="card contact-box">
-      <p><i class="bi bi-envelope-fill"></i>
-        Email:
-        <a href="mailto:ta9842655155@gmail.com">ta9842655155@gmail.com</a>
-      </p>
-
-      <p><i class="bi bi-telephone-fill"></i>
-        Phone:
-        <a href="tel:+919345792029">+91 9345792029</a>
-      </p>
-
-      <p><i class="bi bi-linkedin"></i> LinkedIn: Tamil Arasan</p>
-      <p><i class="bi bi-github"></i> GitHub: Tamilarasa</p>
+      <p><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:ta9842655155@gmail.com">ta9842655155@gmail.com</a></p>
+      <p><i class="bi bi-telephone-fill"></i> Phone: <a href="tel:+919345792029">+91 9345792029</a></p>
+      <div class="contact-social">
+        <a href="https://github.com/Tamilarasa" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/tamil-arasan-b05aba379" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      </div>
     </div>
   </section>
 
@@ -701,9 +703,7 @@
     function toggleMenu(){
       const nav = document.getElementById("navmenu");
       const icon = document.getElementById("menuIcon");
-
       nav.classList.toggle("active");
-
       if(nav.classList.contains("active")){
         icon.classList.remove("bi-list");
         icon.classList.add("bi-x");
@@ -714,29 +714,23 @@
     }
 
     const links = document.querySelectorAll(".navmenu a");
-
     links.forEach(link => {
       link.addEventListener("click", () => {
         links.forEach(item => item.classList.remove("active"));
         link.classList.add("active");
-
-        if(window.innerWidth <= 900){
-          document.getElementById("navmenu").classList.remove("active");
-          document.getElementById("menuIcon").classList.remove("bi-x");
-          document.getElementById("menuIcon").classList.add("bi-list");
-        }
+        document.getElementById("navmenu").classList.remove("active");
+        document.getElementById("menuIcon").classList.remove("bi-x");
+        document.getElementById("menuIcon").classList.add("bi-list");
       });
     });
 
     function openCertificate(src){
-      const modal = document.getElementById("certificateModal");
-      const modalImage = document.getElementById("modalImage");
-      modalImage.src = src;
-      modal.classList.add("active");
+      document.getElementById("certificateModal").classList.add("active");
+      document.getElementById("modalImage").src = src;
     }
 
     function closeCertificate(event){
-      if(event.target.id === "certificateModal" || event.target.classList.contains("close-btn")){
+      if(!event || event.target.id === "certificateModal" || event.target.classList.contains("close-btn")){
         document.getElementById("certificateModal").classList.remove("active");
         document.getElementById("modalImage").src = "";
       }
@@ -749,6 +743,5 @@
       }
     });
   </script>
-
 </body>
 </html>
