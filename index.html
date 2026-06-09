@@ -411,13 +411,12 @@
     }
 
     .certificate-card img{
-      width:100%;
-      height:230px;
-      object-fit:contain;
-      background:#fff;
-      display:block;
-      padding:8px;
-    }
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
 
     .certificate-card h3{
       color:#00c8ff;
@@ -720,11 +719,19 @@
         <h3>Spiro Prime Tech Services</h3>
         <p>Internship Completion</p>
       </div>
-      <div class="certificate-card" onclick="openCertificate('images/Be 10x.jpg')">
-        <img src="images/be 10x.jpg" alt="AI Tools and ChatGPT Workshop Certificate" />
-        <h3>AI Tools & ChatGPT Workshop</h3>
-        <p>be10x Certification - June 7, 2026</p>
-      </div>
+     <div class="certificate-card">
+  <a href="images/be10x.pdf" target="_blank" style="text-decoration:none;color:inherit;">
+    <img src="images/be10x.jpg" alt="AI Tools & ChatGPT Workshop Certificate">
+
+    <h3>AI Tools & ChatGPT Workshop</h3>
+
+    <p>
+      be10x Certification • June 7, 2026
+      <br>
+      Click to view certificate
+    </p>
+  </a>
+</div>
     </div>
   </section>
 
