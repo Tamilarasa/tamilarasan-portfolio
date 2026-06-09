@@ -309,6 +309,29 @@
       font-size:14px;
     }
 
+    .project-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:20px;
+      color:white;
+      text-decoration:none;
+      background:rgba(0,140,255,.18);
+      border:1px solid #00c8ff;
+      padding:11px 18px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .project-link:hover{
+      background:#00c8ff;
+      color:#07111f;
+      transform:translateY(-3px);
+      box-shadow:0 0 18px rgba(0,200,255,.35);
+    }
+
+
     /* ABOUT */
     .about-container{
       display:grid;
@@ -600,7 +623,7 @@
   <section id="projects">
     <div class="section-title">
       <h2>Projects</h2>
-      <p>Featured Data Analyst projects</p>
+      <p>Featured Data Analyst projects with GitHub repositories</p>
     </div>
 
     <div class="grid">
@@ -608,17 +631,43 @@
         <h3>AI Store Sales Forecasting & Demand Planning</h3>
         <p>Built an AI-driven store sales forecasting and demand planning system using machine learning techniques to predict future sales and customer demand.</p>
         <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Excel</span><span class="tag">MySQL</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/clgproject" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
       </div>
+
       <div class="card">
         <h3>AI-Powered Student Performance Analytics Platform</h3>
         <p>Built a Student Performance Analytics System using React, Django, Python, Recharts, and Tailwind CSS to analyze academic performance and attendance.</p>
         <span class="tag">React</span><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Recharts</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/AI-STUDENT-ANALYSIS-DASHBOARD" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
       </div>
+
       <div class="card">
         <h3>AI Data Analytics Platform</h3>
         <p>Built a full-stack AI-powered analytics platform where users can upload CSV/Excel datasets, generate automated analysis, and visualize business data.</p>
         <span class="tag">Django REST</span><span class="tag">React</span><span class="tag">Python</span><span class="tag">Charts</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/InsightAI-AI-Data-Analytics-Platform" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
       </div>
+
+      <div class="card">
+        <h3>Excel Sales Analytics Dashboard</h3>
+        <p>Created an advanced Excel dashboard using Pivot Tables, Power Query, KPI metrics, charts, and interactive slicers to analyze sales performance.</p>
+        <span class="tag">Excel</span><span class="tag">Dashboard</span><span class="tag">Analytics</span><span class="tag">Reports</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/Excel-main" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3>Advanced MySQL Database Management System</h3>
+        <p>Designed and implemented a comprehensive MySQL database system using advanced SQL queries, joins, procedures, views, triggers, and reporting modules.</p>
+        <span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">Database</span><span class="tag">Queries</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/SQL-main" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
+      </div>
+
+      
     </div>
   </section>
 
@@ -670,6 +719,11 @@
         <img src="images/internship.jpg" alt="Internship Certificate" />
         <h3>Spiro Prime Tech Services</h3>
         <p>Internship Completion</p>
+      </div>
+      <div class="certificate-card" onclick="openCertificate('images/Be 10x.jpg')">
+        <img src="images/be 10x.jpg" alt="AI Tools and ChatGPT Workshop Certificate" />
+        <h3>AI Tools & ChatGPT Workshop</h3>
+        <p>be10x Certification - June 7, 2026</p>
       </div>
     </div>
   </section>
