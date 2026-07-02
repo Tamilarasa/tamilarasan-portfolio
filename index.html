@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tamilarasan P | Data Analyst</title>
+  <title>Tamilarasan P | Data Analyst & Frontend Developer</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
@@ -18,7 +18,7 @@
     html{scroll-behavior:smooth;}
 
     body{
-      background:#07111f;
+      background:#0b1120;
       color:white;
       overflow-x:hidden;
     }
@@ -36,13 +36,13 @@
       width:55px;
       height:55px;
       border-radius:50%;
-      background:#0d8cff;
+      background:#d4a554;
       display:flex;
       align-items:center;
       justify-content:center;
       cursor:pointer;
       z-index:3000;
-      box-shadow:0 0 20px rgba(0,140,255,.45);
+      box-shadow:0 0 20px rgba(212,165,84,.45);
     }
 
     .menu-btn i{
@@ -59,7 +59,7 @@
       height:100vh;
       background:rgba(5,12,24,.97);
       backdrop-filter:blur(14px);
-      border-right:1px solid rgba(0,200,255,.35);
+      border-right:1px solid rgba(232,200,122,.35);
       padding-top:105px;
       transition:.35s ease;
       z-index:2500;
@@ -87,7 +87,7 @@
 
     .navmenu a:hover,
     .navmenu a.active{
-      background:#0d8cff;
+      background:#d4a554;
       color:white;
       transform:translateX(5px);
     }
@@ -100,43 +100,165 @@
       justify-content:flex-start;
       padding:90px 8% 80px 14%;
       background:
-      linear-gradient(rgba(0,10,25,.42), rgba(0,10,25,.55)),
+      linear-gradient(rgba(10,15,30,.42), rgba(10,15,30,.55)),
       url("images/hero-bg.png");
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-bg-anim{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .hero-bg-anim span{
+      position:absolute;
+      border-radius:50%;
+      opacity:0;
+      animation:floatUp var(--d) ease-in-out infinite;
+      animation-delay:var(--dd);
+    }
+
+    .hero-bg-anim .c1{
+      width:6px;height:6px;
+      background:rgba(212,165,84,.6);
+      left:5%;bottom:-10%;
+      --d:20s;--dd:0s;
+    }
+    .hero-bg-anim .c2{
+      width:10px;height:10px;
+      background:rgba(232,200,122,.5);
+      left:20%;bottom:-10%;
+      --d:25s;--dd:3s;
+    }
+    .hero-bg-anim .c3{
+      width:4px;height:4px;
+      background:rgba(212,165,84,.7);
+      left:35%;bottom:-10%;
+      --d:18s;--dd:5s;
+    }
+    .hero-bg-anim .c4{
+      width:14px;height:14px;
+      background:rgba(232,200,122,.4);
+      left:50%;bottom:-10%;
+      --d:28s;--dd:1s;
+    }
+    .hero-bg-anim .c5{
+      width:8px;height:8px;
+      background:rgba(212,165,84,.55);
+      left:65%;bottom:-10%;
+      --d:22s;--dd:6s;
+    }
+    .hero-bg-anim .c6{
+      width:5px;height:5px;
+      background:rgba(232,200,122,.65);
+      left:80%;bottom:-10%;
+      --d:19s;--dd:4s;
+    }
+    .hero-bg-anim .c7{
+      width:12px;height:12px;
+      background:rgba(212,165,84,.45);
+      left:92%;bottom:-10%;
+      --d:26s;--dd:2s;
+    }
+    .hero-bg-anim .c8{
+      width:7px;height:7px;
+      background:rgba(232,200,122,.55);
+      left:12%;bottom:-10%;
+      --d:23s;--dd:7s;
+    }
+    .hero-bg-anim .c9{
+      width:3px;height:3px;
+      background:rgba(212,165,84,.8);
+      left:45%;bottom:-10%;
+      --d:17s;--dd:3.5s;
+    }
+    .hero-bg-anim .c10{
+      width:9px;height:9px;
+      background:rgba(232,200,122,.5);
+      left:75%;bottom:-10%;
+      --d:24s;--dd:5.5s;
+    }
+
+    @keyframes floatUp{
+      0%{opacity:0;transform:translateY(0) scale(.3);}
+      15%{opacity:1;transform:translateY(0) scale(1);}
+      85%{opacity:1;}
+      100%{opacity:0;transform:translateY(-110vh) scale(.8);}
     }
 
     .hero-content{max-width:1000px; position:relative; z-index:5;}
 
-    .hero-content h4{
-      font-size:30px;
-      font-weight:400;
-      color:#e6eefc;
-      margin-bottom:12px;
-    }
-
     .hero-name{
       font-size:78px;
       line-height:1.05;
-      color:#fff;
       font-weight:900;
       letter-spacing:2px;
       margin-bottom:15px;
       white-space:nowrap;
+      background:linear-gradient(135deg, #fff 0%, #e8c87a 25%, #d4a554 50%, #e8c87a 75%, #fff 100%);
+      background-size:250% 250%;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      animation:shimmer 5s ease-in-out infinite;
+    }
+
+    @keyframes shimmer{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    .hero-content h4{
+      font-size:30px;
+      font-weight:400;
+      color:#e8e0d4;
+      margin-bottom:12px;
+      animation:fadeUp .8s ease-out;
+    }
+
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(20px);}
+      100%{opacity:1;transform:translateY(0);}
     }
 
     .hero-content h2{
       font-size:52px;
-      color:#008cff;
+      color:#d4a554;
       font-weight:900;
       margin-bottom:24px;
+      min-height:1.2em;
+      display:flex;
+      align-items:center;
+      gap:3px;
     }
+
+    #typing-text{display:inline-block;}
+
+    .cursor{
+      display:inline-block;
+      width:4px;
+      height:1.1em;
+      background:#d4a554;
+      margin-left:2px;
+      vertical-align:text-bottom;
+      animation:blink .7s step-end infinite;
+      border-radius:2px;
+      box-shadow:0 0 8px #d4a554;
+    }
+
+    @keyframes blink{50%{opacity:0;}}
 
     .hero-content p{
       font-size:22px;
       line-height:1.7;
-      color:#f0f6ff;
+      color:#f0ece4;
       max-width:780px;
     }
 
@@ -150,18 +272,18 @@
     .hero-buttons a{
       color:white;
       text-decoration:none;
-      border:1px solid #00aaff;
+      border:1px solid #d4a554;
       padding:14px 28px;
       border-radius:10px;
       font-weight:700;
-      background:rgba(0,140,255,.15);
+      background:rgba(212,165,84,.15);
       transition:.3s;
     }
 
     .hero-buttons a:hover{
-      background:#008cff;
+      background:#d4a554;
       transform:translateY(-4px);
-      box-shadow:0 0 20px rgba(0,140,255,.45);
+      box-shadow:0 0 20px rgba(212,165,84,.45);
     }
 
     .tool-box{
@@ -171,9 +293,9 @@
       gap:18px;
       padding:22px;
       max-width:720px;
-      border:1px solid rgba(0,170,255,.5);
+      border:1px solid rgba(212,165,84,.5);
       border-radius:18px;
-      background:rgba(0,20,45,.72);
+      background:rgba(12,18,35,.72);
       backdrop-filter:blur(10px);
     }
 
@@ -186,7 +308,7 @@
 
     .tool i{
       display:block;
-      color:#00c8ff;
+      color:#e8c87a;
       font-size:34px;
       margin-bottom:8px;
     }
@@ -206,19 +328,19 @@
       align-items:center;
       justify-content:center;
       border-radius:50%;
-      border:2px solid #00c8ff;
-      color:#00c8ff;
+      border:2px solid #e8c87a;
+      color:#e8c87a;
       font-size:28px;
       text-decoration:none;
-      background:rgba(0,20,45,.55);
+      background:rgba(12,18,35,.55);
       transition:.3s;
     }
 
     .hero-social a:hover{
-      background:#00c8ff;
-      color:#07111f;
+      background:#e8c87a;
+      color:#0b1120;
       transform:translateY(-5px);
-      box-shadow:0 0 20px rgba(0,200,255,.45);
+      box-shadow:0 0 20px rgba(232,200,122,.45);
     }
 
     .contact-social{
@@ -235,8 +357,8 @@
       gap:10px;
       text-decoration:none;
       color:white;
-      background:rgba(0,140,255,.15);
-      border:1px solid #00c8ff;
+      background:rgba(212,165,84,.15);
+      border:1px solid #e8c87a;
       padding:13px 24px;
       border-radius:12px;
       font-weight:700;
@@ -244,25 +366,25 @@
     }
 
     .contact-social a:hover{
-      background:#00c8ff;
-      color:#07111f;
+      background:#e8c87a;
+      color:#0b1120;
       transform:translateY(-4px);
     }
 
     /* COMMON */
     .section-title{
       text-align:center;
-      margin-bottom:50px;
+      margin-bottom:45px;
     }
 
     .section-title h2{
       font-size:42px;
-      color:#00c8ff;
+      color:#e8c87a;
     }
 
     .section-title p{
       margin-top:10px;
-      color:#b7c7d9;
+      color:#a09888;
     }
 
     .grid{
@@ -282,26 +404,29 @@
 
     .card:hover{
       transform:translateY(-8px);
-      border-color:#00c8ff;
+      border-color:#e8c87a;
     }
 
     .card h3{
-      color:#00c8ff;
+      color:#e8c87a;
       margin-bottom:15px;
     }
 
     .card p,
     .card li{
-      color:#d6e6ff;
+      color:#d4d0c8;
       line-height:1.8;
       font-size:17px;
     }
+
+    .card p{margin-bottom:10px;}
+    .card p:last-child{margin-bottom:0;}
 
     .card ul{margin-left:20px;}
 
     .tag{
       display:inline-block;
-      background:#0d8cff;
+      background:#d4a554;
       color:white;
       padding:7px 13px;
       border-radius:20px;
@@ -316,8 +441,8 @@
       margin-top:20px;
       color:white;
       text-decoration:none;
-      background:rgba(0,140,255,.18);
-      border:1px solid #00c8ff;
+      background:rgba(212,165,84,.18);
+      border:1px solid #e8c87a;
       padding:11px 18px;
       border-radius:10px;
       font-weight:700;
@@ -325,74 +450,134 @@
     }
 
     .project-link:hover{
-      background:#00c8ff;
-      color:#07111f;
+      background:#e8c87a;
+      color:#0b1120;
       transform:translateY(-3px);
-      box-shadow:0 0 18px rgba(0,200,255,.35);
+      box-shadow:0 0 18px rgba(232,200,122,.35);
     }
 
 
     /* ABOUT */
     .about-container{
       display:grid;
-      grid-template-columns:2fr 1fr;
-      gap:30px;
+      grid-template-columns:1.2fr 1fr;
+      gap:35px;
       align-items:stretch;
     }
 
     .about-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(0,200,255,.35);
+      background:linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+      border:1px solid rgba(232,200,122,.3);
       border-radius:22px;
-      padding:35px;
-    }
-
-    .about-card h3{
-      color:#00c8ff;
-      margin-bottom:18px;
-      font-size:26px;
-    }
-
-    .about-card p{
-      color:#d6e6ff;
-      line-height:1.9;
-      margin-bottom:18px;
-      font-size:17px;
-      text-align:justify;
-    }
-
-    .about-highlights{
-      display:grid;
+      padding:38px;
+      display:flex;
+      flex-direction:column;
       gap:20px;
     }
 
+    .about-profile{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .about-img-wrapper{
+      position:relative;
+      width:120px;
+      height:120px;
+      flex-shrink:0;
+      border-radius:50%;
+      padding:4px;
+      background:linear-gradient(135deg, #e8c87a, #d4a554, #e8c87a);
+      background-size:200% 200%;
+      animation:gradientBorder 3s ease infinite;
+    }
+
+    @keyframes gradientBorder{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    .about-img-wrapper img{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
+      background:#0b1120;
+    }
+
+    .about-intro h3{
+      font-size:26px;
+      color:#fff;
+      margin-bottom:4px;
+    }
+
+    .about-intro .tagline{
+      color:#e8c87a;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .about-text p{
+      color:#d4d0c8;
+      line-height:1.9;
+      margin-bottom:14px;
+      font-size:16px;
+      text-align:justify;
+    }
+
+    .about-text p:last-child{margin-bottom:0;}
+
+    .about-highlights{
+      display:grid;
+      gap:14px;
+      align-content:start;
+    }
+
     .highlight-box{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:18px;
-      padding:24px;
+      background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      padding:20px 22px;
       transition:.3s;
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
 
     .highlight-box:hover{
-      border-color:#00c8ff;
-      transform:translateY(-5px);
+      border-color:#e8c87a;
+      transform:translateX(6px);
+      box-shadow:0 0 25px rgba(232,200,122,.12);
+    }
+
+    .highlight-box i{
+      font-size:26px;
+      color:#e8c87a;
+      width:48px;
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(232,200,122,.1);
+      border-radius:12px;
+      flex-shrink:0;
     }
 
     .highlight-box h3{
-      color:#00c8ff;
-      margin-bottom:10px;
-      font-size:20px;
+      color:#e8c87a;
+      font-size:16px;
+      margin-bottom:3px;
     }
 
-    .highlight-box p{color:#d6e6ff; line-height:1.7;}
+    .highlight-box p{color:#d4d0c8; font-size:14px; line-height:1.5;}
 
     /* CERTIFICATES */
     .certificate-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-      margin-top:35px;
+      gap:25px;
     }
 
     .certificate-card{
@@ -406,8 +591,8 @@
 
     .certificate-card:hover{
       transform:translateY(-8px);
-      border-color:#00c8ff;
-      box-shadow:0 0 25px rgba(0,200,255,.25);
+      border-color:#e8c87a;
+      box-shadow:0 0 25px rgba(232,200,122,.25);
     }
 
     .certificate-card img{
@@ -419,12 +604,12 @@
 }
 
     .certificate-card h3{
-      color:#00c8ff;
+      color:#e8c87a;
       padding:18px 18px 6px;
     }
 
     .certificate-card p{
-      color:#d6e6ff;
+      color:#d4d0c8;
       padding:0 18px 20px;
     }
 
@@ -446,7 +631,7 @@
       max-height:90%;
       background:#fff;
       border-radius:10px;
-      box-shadow:0 0 35px rgba(0,200,255,.35);
+      box-shadow:0 0 35px rgba(232,200,122,.35);
     }
 
     .close-btn{
@@ -467,15 +652,15 @@
     }
 
     .contact-box a{
-      color:#00c8ff;
+      color:#e8c87a;
       text-decoration:none;
     }
 
     footer{
-      background:#050b14;
+      background:#070c16;
       text-align:center;
       padding:30px;
-      color:#b7c7d9;
+      color:#a09888;
     }
 
     @media(max-width:1100px){
@@ -497,8 +682,13 @@
       .hero-content h2{font-size:32px;}
       .hero-content h4{font-size:23px;}
       .hero-content p{font-size:17px;}
+      .about-img-wrapper{width:90px;height:90px;}
+      .about-card{padding:28px;}
+      .highlight-box{padding:16px 18px;}
       .tool{min-width:85px;}
-      .certificate-card img{height:190px;}
+      .card{padding:24px;}
+      .certificate-card img{height:180px;}
+      .certificate-grid{gap:20px;}
     }
   </style>
 </head>
@@ -522,10 +712,16 @@
   </nav>
 
   <section id="hero" class="hero">
+    <div class="hero-bg-anim">
+      <span class="c1"></span><span class="c2"></span><span class="c3"></span>
+      <span class="c4"></span><span class="c5"></span><span class="c6"></span>
+      <span class="c7"></span><span class="c8"></span><span class="c9"></span>
+      <span class="c10"></span>
+    </div>
     <div class="hero-content">
       <h4>Hello, I'm</h4>
       <h1 class="hero-name">TAMILARASAN&nbsp;P</h1>
-      <h2>DATA ANALYST</h2>
+      <h2><span id="typing-text"></span><span class="cursor"></span></h2>
       <p>
         Transforming raw data into meaningful insights using Excel,
         MySQL, Power BI, Python, and AI-driven analytics.
@@ -537,10 +733,6 @@
         <a href="#contact"><i class="bi bi-envelope"></i> Contact Me</a>
       </div>
 
-      <div class="hero-social">
-        <a href="https://github.com/Tamilarasa" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/tamil-arasan-b05aba379" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      </div>
 
       <div class="tool-box">
         <div class="tool"><i class="bi bi-file-earmark-spreadsheet-fill"></i>Excel</div>
@@ -560,34 +752,50 @@
 
     <div class="about-container">
       <div class="about-card">
-        <h3>Who Am I?</h3>
-        <p>
-          I am Tamilarasan P, a passionate Data Analyst and Information Technology student with a strong interest in transforming raw data into meaningful business insights.
-        </p>
-        <p>
-          I have experience working with Excel, MySQL, Power BI, Python, HTML, CSS, and JavaScript. I enjoy solving real-world problems through data analysis, visualization, and dashboard development.
-        </p>
-        <p>
-          My career goal is to become a professional Data Analyst and contribute to organizations by delivering data-driven solutions that improve decision-making and business growth.
-        </p>
+        <div class="about-profile">
+          <div class="about-img-wrapper">
+            <img src="images/profile.png" alt="Tamilarasan P">
+          </div>
+          <div class="about-intro">
+            <h3>Who Am I?</h3>
+            <p class="tagline">Data Analyst & Frontend Developer</p>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>I am Tamilarasan P, a passionate Data Analyst and Information Technology student with a strong interest in transforming raw data into meaningful business insights.</p>
+          <p>I have experience working with Excel, MySQL, Power BI, Python, HTML, CSS, and JavaScript. I enjoy solving real-world problems through data analysis, visualization, and dashboard development.</p>
+          <p>My career goal is to become a professional Data Analyst and contribute to organizations by delivering data-driven solutions that improve decision-making and business growth.</p>
+        </div>
       </div>
 
       <div class="about-highlights">
         <div class="highlight-box">
-          <h3>🎓 Education</h3>
-          <p>B.Tech Information Technology</p>
+          <i class="bi bi-mortarboard-fill"></i>
+          <div>
+            <h3>Education</h3>
+            <p>B.Tech Information Technology</p>
+          </div>
         </div>
         <div class="highlight-box">
-          <h3>📊 Projects</h3>
-          <p>3+ Major Analytics Projects</p>
+          <i class="bi bi-kanban-fill"></i>
+          <div>
+            <h3>Projects</h3>
+            <p>3+ Major Analytics Projects</p>
+          </div>
         </div>
         <div class="highlight-box">
-          <h3>🏆 Certifications</h3>
-          <p>Power BI, Data Analytics & Internship</p>
+          <i class="bi bi-award-fill"></i>
+          <div>
+            <h3>Certifications</h3>
+            <p>Power BI, Data Analytics & Internship</p>
+          </div>
         </div>
         <div class="highlight-box">
-          <h3>💼 Goal</h3>
-          <p>Data Analyst</p>
+          <i class="bi bi-bullseye"></i>
+          <div>
+            <h3>Goal</h3>
+            <p>Data Analyst & Frontend Developer</p>
+          </div>
         </div>
       </div>
     </div>
@@ -622,7 +830,7 @@
   <section id="projects">
     <div class="section-title">
       <h2>Projects</h2>
-      <p>Featured Data Analyst projects with GitHub repositories</p>
+      <p>Featured Data Analyst & Frontend projects with GitHub repositories</p>
     </div>
 
     <div class="grid">
@@ -666,7 +874,23 @@
         <a class="project-link" href="https://github.com/Tamilarasa/SQL-main" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
       </div>
 
-      
+      <div class="card">
+        <h3>KCP — Web Design & Development Agency</h3>
+        <p>A professional multi-page agency website built for a web design and development studio. Features hero, services, team, stats, and recognition sections — fully responsive with custom CSS and JavaScript.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/simplewebsite" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
+        <a class="project-link" href="https://tamilarasa.github.io/simplewebsite/" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+      </div>
+
+      <div class="card">
+        <h3>Nexora Digital Solutions — Premium Business Website</h3>
+        <p>A premium multi-page business website demo with glassmorphism UI, pricing plans, FAQ accordion, stats counters, domain search, testimonials, scroll-reveal animations and login page — fully responsive.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">UI/UX</span><span class="tag">Responsive</span>
+        <br>
+        <a class="project-link" href="https://github.com/Tamilarasa/demowebsite2" target="_blank"><i class="bi bi-github"></i> View on GitHub</a>
+        <a class="project-link" href="https://tamilarasa.github.io/demowebsite2/" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Live Demo</a>
+      </div>
     </div>
   </section>
 
@@ -756,7 +980,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Tamilarasan P | Data Analyst Portfolio</p>
+    <p>© 2026 Tamilarasan P | Data Analyst & Frontend Developer</p>
   </footer>
 
   <script>
@@ -802,6 +1026,33 @@
         document.getElementById("modalImage").src = "";
       }
     });
+
+    const titles = ["DATA ANALYST", "FRONTEND DEVELOPER"];
+    let titleIndex = 0, charIndex = 0, isDeleting = false;
+    const el = document.getElementById("typing-text");
+
+    function typeEffect(){
+      const current = titles[titleIndex];
+      if(isDeleting){
+        el.textContent = current.substring(0, charIndex--);
+      } else {
+        el.textContent = current.substring(0, ++charIndex);
+      }
+
+      if(!isDeleting && charIndex === current.length){
+        setTimeout(() => { isDeleting = true; typeEffect(); }, 2000);
+        return;
+      }
+      if(isDeleting && charIndex === 0){
+        isDeleting = false;
+        titleIndex = (titleIndex + 1) % titles.length;
+        setTimeout(typeEffect, 400);
+        return;
+      }
+      setTimeout(typeEffect, isDeleting ? 40 : 90);
+    }
+
+    typeEffect();
   </script>
 </body>
 </html>
